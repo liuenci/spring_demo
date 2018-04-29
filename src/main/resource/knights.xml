@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--声明成 bean-->
+    <bean id="knight" class="com.spring.service.impl.BraveKnight">
+        <constructor-arg ref="quest"/>
+    </bean>
+    <bean id="quest" class="com.spring.service.impl.SlayDragonQuest">
+        <!--这里使用了 Spring EL 表达式 将 PrintStream 传入 构造器中-->
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+</beans>
