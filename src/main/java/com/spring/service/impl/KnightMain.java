@@ -10,10 +10,5 @@ public class KnightMain {
         Knight knight = context.getBean(Knight.class);
         knight.embarkOnQuest();
         context.close();
-
-        Student student = new Student();
-        Student student1 = (Student) student.clone();
-        System.out.println(student);
-        System.out.println(student1);
     }
 }

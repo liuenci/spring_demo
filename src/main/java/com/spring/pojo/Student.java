@@ -23,6 +23,11 @@ public class Student implements Cloneable{
         this.name = name;
     }
 
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();

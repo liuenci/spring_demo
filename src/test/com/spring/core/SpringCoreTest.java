@@ -12,13 +12,9 @@ public class SpringCoreTest {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringCore.xml");
         // 创建对象的两种方式
         Student student = (Student) applicationContext.getBean("student");
-        student.setId(1);
-        student.setName("tom");
         logger.info(student.getId() + " " + student.getName());
 
         Student student1 = applicationContext.getBean("student",Student.class);
-        student1.setId(2);
-        student1.setName("Marry");
         logger.info(student1.getId() + " " + student1.getName());
     }
 }
