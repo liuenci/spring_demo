@@ -28,6 +28,9 @@ public class Student implements Cloneable{
         this.name = name;
     }
 
+    public Student() {
+    }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();

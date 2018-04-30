@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="com.spring"/>
-    <bean class="com.spring.pojo.Student" id="student">
-        <constructor-arg index="0" value="1"></constructor-arg>
-        <constructor-arg index="1" value="张三"></constructor-arg>
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="di" class="com.spring.pojo.DI">
+        <property name="map">
+            <map>
+                <entry key="1">
+                    <value>张三</value>
+                </entry>
+                <entry key="2">
+                    <value>李四</value>
+                </entry>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>小甜甜</value>
+                <value>小天天</value>
+            </set>
+        </property>
+        <property name="list">
+            <list>
+                <value>IOC</value>
+                <value>DI</value>
+            </list>
+        </property>
+        <property name="pro">
+            <props>
+                <prop key="1">哈哈</prop>
+                <prop key="2">嘿嘿</prop>
+            </props>
+        </property>
     </bean>
 </beans>
