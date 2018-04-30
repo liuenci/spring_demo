@@ -33,22 +33,22 @@
       <version>1.2</version>
     </dependency>
 
-    <!--spring-->
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <artifactId>spring-core</artifactId>
+      <version>4.3.2.RELEASE</version>
     </dependency>
+
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <artifactId>spring-context</artifactId>
+      <version>4.3.2.RELEASE</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-aop</artifactId>
-      <version>4.3.1.RELEASE</version>
+      <artifactId>spring-aspects</artifactId>
+      <version>4.3.2.RELEASE</version>
     </dependency>
     <dependency>
     <groupId>org.mockito</groupId>
@@ -71,6 +71,7 @@
       <artifactId>jsoup</artifactId>
       <version>1.9.2</version>
     </dependency>
+
   </dependencies>
 
   <build>
