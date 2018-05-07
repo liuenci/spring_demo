@@ -36,9 +36,80 @@
             <props>
                 <prop key="1">哈哈</prop>
                 <prop key="2">嘿嘿</prop>
+
+
+
+
+
+
+
+
+
+
+
+
             </props>
         </property>
     </bean>-->
     <context:component-scan base-package="com.spring"></context:component-scan>
     <aop:aspectj-autoproxy/>
+
+    <!--<bean id="service" class="com.spring.aop.Service"></bean>
+    <bean id="aspect" class="com.spring.aop.MyAspect"></bean>
+    <aop:config>
+        <aop:aspect ref="aspect">
+            <aop:before method="method1" pointcut="execution(* com.spring.aop.Service.fun())"/>
+
+        </aop:aspect>
+    </aop:config>-->
+
+    <!--<bean id="order" class="com.spring.aop.Order"/>
+    <bean id="aspects" class="com.spring.aop.MyAspect"/>
+
+    <aop:config>
+        <aop:aspect ref="aspects">
+            <aop:before method="start" pointcut="execution(* com.spring.aop.Order.*(..))"/>
+            <aop:after method="end" pointcut="execution(* com.spring.aop.Order.*(..))"/>
+        </aop:aspect>
+    </aop:config>-->
+
+
+    <bean id="dataSource_druid"
+          class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+        <property name="targetDataSource">
+            <bean class="com.alibaba.druid.pool.DruidDataSource">
+                <property name="url" value="${db.url}" />
+                <property name="username" value="${db.username}" />
+                <property name="password" value="${db.password}" />
+                <!-- 配置初始化大小、最小、最大 -->
+                <property name="initialSize" value="1" />
+                <property name="minIdle" value="10" />
+                <property name="maxActive" value="30" />
+
+                <!-- 配置获取连接等待超时的时间 -->
+                <property name="maxWait" value="60000" />
+
+                <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+                <property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+                <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+                <property name="minEvictableIdleTimeMillis" value="300000" />
+
+                <property name="testWhileIdle" value="false" />
+                <property name="testOnBorrow" value="false" />
+                <property name="testOnReturn" value="false" />
+
+                <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+                <property name="poolPreparedStatements" value="false" />
+                <property name="maxPoolPreparedStatementPerConnectionSize"
+                          value="20" />
+
+                <property name="defaultAutoCommit" value="true" />
+                <property name="ValidationQueryTimeout" value="60000" />
+                <property name="validationQuery" value="select 1" />
+            </bean>
+        </property>
+    </bean>
+
+
 </beans>

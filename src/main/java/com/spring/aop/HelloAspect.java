@@ -10,19 +10,23 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class HelloAspect {
-    @Around("execution(* com.spring.service..*.*(..))")
-    public void around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    // @Around("execution(* com.spring.service..*.*(..))")
+    public void around(ProceedingJoinPoint proceedingJoinPoint){
         System.out.println("环绕通知");
-        proceedingJoinPoint.proceed();
+        try {
+            proceedingJoinPoint.proceed();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
         System.out.println("环绕通知");
     }
 
-    @Before("execution(* com.spring.service..*.*(..))")
+    // @Before("execution(* com.spring.service..*.*(..))")
     public void before() {
         System.out.println("前置通知");
     }
 
-    @After("execution(* com.spring.service..*.*(..))")
+    // @After("execution(* com.spring.service..*.*(..))")
     public void after() {
         System.out.println("后置通知");
     }
